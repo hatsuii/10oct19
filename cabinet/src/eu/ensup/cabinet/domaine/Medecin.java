@@ -1,43 +1,34 @@
 package eu.ensup.cabinet.domaine;
 
-public class Medecin {
-
-	private String nom;
-	private String prenom;
+public class Medecin extends Personne{
 	private Patient patient;
+	private String specialite;
 	
-	public Medecin(){
-		
+	public Medecin(int id, String nom, String prenom, String specialite) {
+		super(id, nom, prenom);
+		this.specialite = specialite;
 	}
-	public Medecin(String nom, String prenom) {
-		this.nom = nom;
-		this.prenom = prenom;
-	}
-
-
-	public String getNom() {
-		return nom;
-	}
-
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
-
-	public String getPrenom() {
-		return prenom;
-	}
-
-	public void setPrenom(String prenom) {
-		this.prenom = prenom;
-	}
-
+	
 	public Patient getPatient() {
 		return patient;
 	}
-
 	public void setPatient(Patient patient) {
 		this.patient = patient;
 	}
+	public String getSpecialite() {
+		return specialite;
+	}
+	public void setSpecialite(String specialite) {
+		this.specialite = specialite;
+	}
+
+	@Override
+	public String toString() {
+		return "Info du médecin numéro "+getId()+" : "+getNom()+" - "+getPrenom()+" - "+getSpecialite();
+	}
 
 
+	
+	
+	
 }

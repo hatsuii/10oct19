@@ -1,44 +1,31 @@
 package eu.ensup.cabinet.domaine;
 
-public class Patient {
+public class Patient extends Personne{
 	
-	private String nom;
-	private String prenom;
 	private Medecin medecin;
+	private String symptome;
 	
-	public Patient(){
-		
+	public Patient(int id, String nom, String prenom, String symptome) {
+		super(id, nom, prenom);
+		this.symptome = symptome;
 	}
-
-	public Patient(String nom, String prenom) {
-		super();
-		this.nom = nom;
-		this.prenom = prenom;
-	}
-
-
-	public String getNom() {
-		return nom;
-	}
-
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
-
-	public String getPrenom() {
-		return prenom;
-	}
-
-	public void setPrenom(String prenom) {
-		this.prenom = prenom;
-	}
-
 	public Medecin getMedecin() {
 		return medecin;
 	}
-
 	public void setMedecin(Medecin medecin) {
 		this.medecin = medecin;
 	}
+	public String getSymptome() {
+		return symptome;
+	}
+	public void setSymptome(String symptome) {
+		this.symptome = symptome;
+	}
+	@Override
+	public String toString() {
+		return "Patient [medecin=" + medecin + ", symptome=" + symptome + "]";
+	}
+
+	
 	
 }
