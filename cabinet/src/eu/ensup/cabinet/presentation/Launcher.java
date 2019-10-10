@@ -1,5 +1,6 @@
 package eu.ensup.cabinet.presentation;
 
+import eu.ensup.cabinet.dao.MedecinDao;
 import eu.ensup.cabinet.domaine.Medecin;
 import eu.ensup.cabinet.domaine.Patient;
 import eu.ensup.cabinet.service.MedecinService;
@@ -16,8 +17,8 @@ public class Launcher {
 		MedecinService meds = new MedecinService(med);
 		meds.consulter(pat);
 		
-		//meds.engagerMedecin(med);
-		System.out.println(meds.LireInfoMedecin(3));
+		//meds.engagerMedecin(med, new MedecinDao());
+		System.out.println(meds.LireInfoMedecin(3, new MedecinDao()));
 	}
 
 }
