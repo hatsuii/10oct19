@@ -16,7 +16,7 @@ public class MedecinDao implements IMedecinDao{
 	private String passwd="";
 	private Connection cn;
 	private Statement st;
-	
+
 	public MedecinDao(){
 		//se co à la bdd
 		System.out.println("Medecin Dao");
@@ -32,10 +32,11 @@ public class MedecinDao implements IMedecinDao{
 			System.out.println("erreur connection, sqlexception");
 			//e.printStackTrace();
 		}
-		
-		
+
+
 	}
 	//crud
+	@Override
 	public boolean create(Medecin pMedecin){
 		System.out.println("création médecin");
 		try {
@@ -50,13 +51,15 @@ public class MedecinDao implements IMedecinDao{
 
 		return true;
 	}
-	
+
+	@Override
 	public Medecin getById(int id){
+		System.out.println("get medecin by ID");
 		int idMed;
 		String nom;
 		String prenom;
 		String specialite;
-		
+
 		Medecin med = null;
 		try {
 			st = cn.createStatement();

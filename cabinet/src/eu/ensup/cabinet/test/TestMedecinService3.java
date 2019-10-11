@@ -13,17 +13,17 @@ import eu.ensup.cabinet.domaine.Medecin;
 import eu.ensup.cabinet.service.MedecinService;
 
 @RunWith(MockitoJUnitRunner.class)
-public class TestMedecinService2 {
-
+public class TestMedecinService3 {
 	@Mock // attention importer import org.mockito.Mock;
 	IMedecinDao dao;
 
 	@Test
-	public void testLectureInfoMedecin2() {
-		/* Scénario de test:
-		 * 		La demande de lecture d'information d'un medecin à partir de son identifiant
-		 * 		nous ramène la totalité de ses caractéristiques
-		 * */
+	public void testLectureInfoMedecin3() {
+		/*
+		 * Scénario de test: La demande de lecture d'information d'un medecin à
+		 * partir de son identifiant nous ramène la totalité de ses
+		 * caractéristiques
+		 */
 
 		// 1: Mocker l'interface du dao
 		// @Mock IMedecinDao dao; dans la classe de test
