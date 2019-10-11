@@ -9,7 +9,7 @@ public class Launcher {
 
 	public static void main(String[] args) {
 
-		Medecin med = new Medecin(3,"luc","vistor","cardio");
+		Medecin med = new Medecin(3,"luc","victor","dentiste");
 		Patient pat = new Patient(2,"pierre","leblond","carrie");
 		pat.setMedecin(med);
 		med.setPatient(pat);
@@ -17,8 +17,8 @@ public class Launcher {
 		MedecinService meds = new MedecinService(med);
 		meds.consulter(pat);
 		
-		//meds.engagerMedecin(med, new MedecinDao());
-		System.out.println(meds.LireInfoMedecin(3, new MedecinDao()));
+		meds.engagerMedecin(med, new MedecinDao());
+		//System.out.println(meds.LireInfoMedecin(3, new MedecinDao()));
 	}
 
 }

@@ -1,6 +1,7 @@
 package eu.ensup.cabinet.service;
 
 import eu.ensup.cabinet.dao.IMedecinDao;
+import eu.ensup.cabinet.dao.MedecinDao;
 import eu.ensup.cabinet.domaine.Medecin;
 import eu.ensup.cabinet.domaine.Patient;
 
@@ -8,17 +9,23 @@ public class MedecinService implements IMedecinService{
 	
 	private Medecin pMed;
 	private IMedecinDao iMed;
-	//mettre interface en parametre des méthodes
+
 	public MedecinService(Medecin pMed) {
 		this.pMed = pMed;
 	}
 	
+	public MedecinService(IMedecinDao iMed) {
+		super();
+		this.iMed = iMed;
+	}
+
+
 	public boolean engagerMedecin(Medecin pMed,IMedecinDao iMed){
 		iMed.create(pMed);
 		return true;
 	}
-	public Medecin LireInfoMedecin(int idMedecin,IMedecinDao iMed){
-		return iMed.getById(idMedecin);
+	public Medecin LireInfoMedecin(int idMedecin/*,IMedecinDao iMed*/){
+		return new MedecinDao().getById(idMedecin);
 
 	}
  

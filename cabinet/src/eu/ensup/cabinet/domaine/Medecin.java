@@ -27,8 +27,4 @@ public class Medecin extends Personne{
 		return "Info du médecin numéro "+getId()+" : "+getNom()+" - "+getPrenom()+" - "+getSpecialite();
 	}
 
-
-	
-	
-	
 }

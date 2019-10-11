@@ -7,6 +7,6 @@ import eu.ensup.cabinet.domaine.Patient;
 public interface IMedecinService {
 
 	public boolean engagerMedecin(Medecin pMed,IMedecinDao iMed);
-	public Medecin LireInfoMedecin(int idMedecin,IMedecinDao iMed);
+	public Medecin LireInfoMedecin(int idMedecin/*,IMedecinDao iMed*/);
 	public void consulter (Patient p);
 }
