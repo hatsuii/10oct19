@@ -8,6 +8,7 @@ import java.sql.Statement;
 
 import eu.ensup.cabinet.domaine.Medecin;
 
+
 public class MedecinDao implements IMedecinDao{
 
 	private String url="jdbc:mysql://localhost/toubib";
