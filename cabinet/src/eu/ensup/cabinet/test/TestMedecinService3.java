@@ -14,6 +14,7 @@ import eu.ensup.cabinet.service.MedecinService;
 
 @RunWith(MockitoJUnitRunner.class)
 public class TestMedecinService3 {
+
 	@Mock // attention importer import org.mockito.Mock;
 	IMedecinDao dao;
 
@@ -33,9 +34,10 @@ public class TestMedecinService3 {
 		// 3: imposer un comportement au mock
 		Mockito.when(dao.getById(1)).thenReturn(new Medecin(1, "herve", "lambert", "Stomatologue"));
 		// 4: appeler une méthode du service
-		Medecin medReturned = meds.LireInfoMedecin(1);
+		Medecin medReturned = meds.lireInfoMedecin(1);
 		// 5: Comparer le resultat réel avec le resultat attendu
 		assertEquals(medReturned.getNom(), "herve");
+		Mockito.verify(dao, Mockito.times(1)).getById(1);
 	}
 
 }

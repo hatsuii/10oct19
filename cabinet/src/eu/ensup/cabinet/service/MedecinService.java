@@ -7,26 +7,29 @@ import eu.ensup.cabinet.domaine.Patient;
 public class MedecinService implements IMedecinService{
 
 	private Medecin pMed;
-	private IMedecinDao iMed;
+	private IMedecinDao iMedDao;
+
+	public MedecinService() {
+
+	}
 
 	public MedecinService(Medecin pMed) {
 		this.pMed = pMed;
 	}
 
 	public MedecinService(IMedecinDao iMed) {
-		super();
-		this.iMed = iMed;
+		this.iMedDao = iMed;
 	}
 
 
 	@Override
 	public boolean engagerMedecin(Medecin pMed) {
-		return iMed.create(pMed);
+		return iMedDao.create(pMed);
 	}
-	@Override
-	public Medecin LireInfoMedecin(int idMedecin) {
-		return iMed.getById(idMedecin);
 
+	@Override
+	public Medecin lireInfoMedecin(int idMedecin) {
+		return iMedDao.getById(idMedecin);
 	}
 
 
